@@ -1,15 +1,21 @@
-const express = require("express");
-const path = require("path");
+const express = require('express');
+const path = require('path');
 const app = express();
+const PORT = process.env.PORT || 3000;
 
-// Serve static files (your HTML, CSS, JS)
-app.use(express.static(path.join(__dirname, "public")));
+// Serve static files from root directory
+app.use(express.static(path.join(__dirname)));
 
-// Default route
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+// Route for homepage
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Start server
-const PORT = process.env.PORT || 10000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Route for tracking page
+app.get('/tracking', (req, res) => {
+    res.sendFile(path.join(__dirname, 'tracking.html'));
+});
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
