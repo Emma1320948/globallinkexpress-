@@ -1,12 +1,1 @@
-{
-  "name": "globallinkexpress",
-  "version": "1.0.0",
-  "description": "Korea logistic platform for international air and flight deliveries",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "dependencies": {
-    "express": "^4.18.2"
-  }
-}
+
